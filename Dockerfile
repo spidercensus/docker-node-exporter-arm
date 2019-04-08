@@ -1,7 +1,7 @@
 FROM debian:9
 MAINTAINER MqllR <>
 
-ARG EXPORTER_VERSION=0.16.0
+ARG EXPORTER_VERSION=0.17.0
 ARG ARCH=arm64
 ARG EXPORTER_URL=https://github.com/prometheus/node_exporter/releases/download/v${EXPORTER_VERSION}/node_exporter-${EXPORTER_VERSION}.linux-arm64.tar.gz
 
