@@ -16,6 +16,7 @@ MAINTAINER MqllR <>
 
 ENV HOST_PROC /host/proc
 ENV HOST_SYS /host/sys
+ENV HOST_ROOTFS /rootfs
 ENV EXTRA_OPTS ""
 
 COPY --from=0 /node_exporter /usr/local/bin/node_exporter
