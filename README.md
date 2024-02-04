@@ -9,7 +9,7 @@ docker run -d -p 9100:9100
            -v /proc:/host/proc
            -v /sys:/host/sys
            -v /:/rootfs:ro
-        mqll/node_exporter-arm
+        spidercensus/node-exporter-arm
 ```
 
 * With options
@@ -20,5 +20,5 @@ docker run -d -p 9100:9100
            -v /proc:/host/proc
            -v /sys:/host/sys
            -v /:/rootfs:ro
-        mqll/node_exporter-arm
+        spidercensus/node-exporter-arm
 ```
