@@ -1,4 +1,5 @@
 FROM alpine:3.19.1
+MAINTAINER spidercensus
 
 ARG EXPORTER_VERSION=1.7.0
 ARG ARCH=arm64
