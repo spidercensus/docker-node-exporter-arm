@@ -22,4 +22,3 @@ ENV EXTRA_OPTS ""
 EXPOSE 9100
 
 ENTRYPOINT [ "./entrypoint.sh" ]
-# ENTRYPOINT [ "/usr/local/bin/node_exporter", "--path.rootfs=${HOST_ROOTFS}", "--path.procfs=${HOST_PROC}", "--path.sysfs=${HOST_SYS}" ]
