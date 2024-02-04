@@ -1,5 +1,6 @@
 FROM alpine:3.19.1
 MAINTAINER spidercensus
+# Note -- It would be way better if this chose the architecture on the fly.
 
 ARG EXPORTER_VERSION=1.7.0
 ARG ARCH=arm64
