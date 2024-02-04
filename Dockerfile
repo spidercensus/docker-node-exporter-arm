@@ -1,5 +1,4 @@
-FROM alpine
-MAINTAINER spidercensus <>
+FROM alpine:3.19.1
 
 ARG EXPORTER_VERSION=1.7.0
 ARG ARCH=arm64
@@ -8,8 +7,10 @@ ARG EXPORTER_URL=https://github.com/prometheus/node_exporter/releases/download/v
 RUN echo ${EXPORTER_URL}
 
 RUN apk add wget
-RUN wget ${EXPORTER_URL} -O node_exporter.tgz &&  tar -vxzf node_exporter.tgz
-COPY node_exporter-${EXPORTER_VERSION}.linux-${ARCH}/node_exporter /usr/local/bin/node_exporter
+RUN wget ${EXPORTER_URL} -O node_exporter.tgz
+RUN tar -vxzf node_exporter.tgz
+
+RUN "cp" "node_exporter-${EXPORTER_VERSION}.linux-${ARCH}/node_exporter" "/usr/local/bin/node_exporter"
 COPY entrypoint.sh .
 
 
@@ -21,3 +22,4 @@ ENV EXTRA_OPTS ""
 EXPOSE 9100
 
 ENTRYPOINT [ "./entrypoint.sh" ]
+# ENTRYPOINT [ "/usr/local/bin/node_exporter", "--path.rootfs=${HOST_ROOTFS}", "--path.procfs=${HOST_PROC}", "--path.sysfs=${HOST_SYS}" ]
